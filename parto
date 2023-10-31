@@ -1,0 +1,30 @@
+#include<stdio.h>
+
+int main (){
+	
+	int fetusWeight;
+	printf ("Insira o peso do feto (g): ");
+	scanf ("%d", &fetusWeight);
+	
+	int fetusWeeks;
+	printf ("Insira a quantidade de semanas do feto: ");
+	scanf ("%d", &fetusWeeks);
+	
+	int months = fetusWeeks/4;
+	
+	if (fetusWeight<100 || fetusWeeks<28){
+		printf ("Parto nao devera ser realizado, reavaliar clinicamente.");
+		return 0;
+	} else { if(fetusWeight>2500 && months>7){
+		printf ("Parto normal.");
+	} else if (fetusWeight>2500 && months<=7){
+		printf ("Parto cesariana.");
+	} else if (1500<fetusWeight<2000 && months>9){
+		printf ("Parto normal.");
+	} else {
+		printf ("Parto cesariana");
+	}
+}
+
+return 0;
+}
