@@ -1,0 +1,14 @@
+#include<stdio.h>
+
+int main (){
+	
+	int laranjas;
+	double valorDuzia = 8.35;
+	double valorUnidade = valorDuzia/12;
+	
+	scanf ("%d", &laranjas);
+	printf ("%d \n", laranjas/12);
+	printf ("%.2lf", valorUnidade*laranjas);
+	
+return 0;
+}
