@@ -1,0 +1,14 @@
+#include<stdio.h>
+
+int main(){
+    
+    int dias;
+    int km;
+    double diaria=30.00;
+    double kmRodado=0.01;
+    
+    scanf("%d%d", &dias, &km);
+    printf("Valor a pagar pelo aluguel: R$ %lf", ((dias*diaria)+(km*kmRodado))*0.9);
+    
+    return 0;
+}
