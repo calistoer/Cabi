@@ -1,0 +1,67 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+
+int main(){
+	
+	int oper;
+	
+	printf("Qual operacao voce deseja realizar? \n 1. Soma \n 2. Subtracao \n 3. Multiplicacao \n 4. Divisao \n 5. Calculo de equacao do 2o grau \n 6. Derivada em um ponto de uma funcao do 2o grau \n 0. Encerrar programa \n");
+	scanf("%d", &oper);
+	
+	if(oper==1){
+		
+		float a,b;
+		printf("Digite dois valores: ");
+		scanf("%f%f", &a,&b);
+		printf("%.2f + %.2f = %.3f",a,b,(a+b));
+		
+	}else if(oper==2){
+		
+		float a,b;
+		printf("Digite dois valores: ");
+		scanf("%f%f", &a,&b);
+		printf("%.2f - %.2f = %.3f",a,b,(a-b));
+		
+	}else if(oper==3){
+		
+		float a,b;
+		printf("Digite dois valores: ");
+		scanf("%f%f", &a,&b);
+		printf("%.2f x %.2f = %.3f",a,b,(a*b));
+		
+	}else if(oper==4){
+		
+		float a,b;
+		printf("Digite dois valores: ");
+		scanf("%f%f", &a,&b);
+		printf("%.2f / %.2f = %.3f",a,b,(a/b));
+		
+	}else if(oper==5){
+		
+		double a,b,c;
+		printf("Digite os coeficientes da equação do 2o grau na ordem a, b, c: ");
+		scanf("%lf%lf%lf", &a, &b, &c);
+		printf("As raizes da funcao sao: x1 = %.3lf e x2 = %.3lf", (-b+sqrt((pow((b),2)-4*a*c)))/2*a, (-b-sqrt((pow((b),2)-4*a*c)))/2*a);
+		
+	}else if(oper==6){
+		
+		double a,b,c;
+		double ponto;
+		printf("Digite os coeficientes da equacao do 2o grau na ordem a, b, c e o ponto desejado: ");
+		scanf("%lf%lf%lf%lf", &a, &b, &c, &ponto);
+		printf("A derivada da funcao no ponto %.2lf eh %.3lf", ponto, (2*a*ponto)+b);
+		
+	}else if(oper==0){
+		
+		return 0;
+		
+	}else{
+		
+		printf("Entrada invalida");
+		exit(0);
+		
+	}
+	
+return 0;
+}
