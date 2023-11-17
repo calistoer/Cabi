@@ -1,0 +1,22 @@
+#include<stdio.h> 
+
+int main(){
+	
+	int pL, pV, pT;
+	scanf("%d%d%d",&pL,&pV,&pT);
+	double distanciaP=pV*pT;
+	int voltas=distanciaP/pL;
+	double posicao=distanciaP-(voltas*pL);
+	const erro=0;
+	if(distanciaP<pL && pL>100 && pL<10000000 && pV>0 && pV<40 && pT>0 && pT<10000000){
+		printf("voltas completas: 0 / posicao atual: %.0lf",distanciaP);
+	}else if(distanciaP==pL && pL>100 && pL<10000000 && pV>0 && pV<40 && pT>0 && pT<10000000){
+		printf("voltas completas: 1 / posicao atual: %.0lf",distanciaP);	
+	}else if(distanciaP>pL && pL>100 && pL<10000000 && pV>0 && pV<40 && pT>0 && pT<10000000){
+		printf("voltas completas: %.d / posicao atual: %.0lf",voltas,posicao);
+	}else {
+		printf("algo de errado nao esta certo!");
+	}
+	
+return 0;	
+}
