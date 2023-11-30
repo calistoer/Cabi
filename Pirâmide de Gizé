@@ -1,0 +1,29 @@
+#include<stdio.h>
+
+int main(){
+    int altura;
+    scanf("%d",&altura);
+    
+    fPiramide(altura);
+
+return 0;
+}    
+
+fPiramide(int altura){
+    for(int linha=0; linha<altura; linha++){
+        for(int ponto=0; ponto<altura-linha-1; ponto++){
+            printf(".");
+        }
+        printf("*");
+        if(linha>0){
+            for(int traco=0; traco<2*linha-1; traco++){
+                printf("-");
+            }
+            printf("*");
+        }
+        for(int ponto=0; ponto<altura-linha-1; ponto++){
+            printf(".");
+        }
+        printf("\n");
+        }
+    }
