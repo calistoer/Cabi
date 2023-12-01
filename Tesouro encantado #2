@@ -1,0 +1,60 @@
+#include<stdio.h>
+
+fTesouro(int entrada){
+	int coluna;
+	printf("%d ", entrada);
+	for(coluna=0; coluna<2; coluna++){
+			entrada=entrada*2;
+			printf("%d ", entrada);
+		}
+		printf("\n");
+	for(coluna=0; coluna<3; coluna++){
+			entrada=entrada*2;
+			printf("%d ", entrada);
+		}	
+		printf("\n");
+	for(coluna=0; coluna<3; coluna++){
+			entrada=entrada*2;
+			printf("%d ", entrada);
+		}
+		printf("\n");
+	for(coluna=0; coluna<3; coluna++){
+			entrada=entrada*2;
+			printf("%d ", entrada);
+		}
+		printf("\n\n");
+}
+fSoma(int entrada){
+	int a=entrada;
+	int b=a*2;
+	int c=b*2;
+	int d=c*2;
+	int e=d*2;
+	int f=e*2;
+	int g=f*2;
+	int h=g*2;
+	int i=h*2;
+	int j=i*2;
+	int k=j*2;
+	int l=k*2;
+	int soma=a+b+c+d+e+f+g+h+i+j+k+l;
+	printf("R$%d,00", soma);
+	}
+
+int main() {
+    int entrada;
+    scanf("%d", &entrada);
+    
+    if(entrada>0){
+    	printf("Planilha do Tesouro Encantado:\n\n");
+    fTesouro(entrada);
+    
+	printf("Tesouro dourado conquistado: ");
+	fSoma(entrada);
+	}else{
+		printf("Valor invalido, tente novamente!");
+	}
+    
+	return 0;
+}
+
