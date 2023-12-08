@@ -1,0 +1,81 @@
+#include<stdio.h>
+#include<math.h>
+int dCharts(int diario){
+	
+	int pontosDiario;
+	
+		if(diario==1){
+			pontosDiario=10;
+		}else if(diario==2){
+			pontosDiario=7;
+		}else if(diario==3){
+			pontosDiario=5;
+		}else if(diario>=4 && diario<=10){
+			pontosDiario=3;
+		}else if(diario>=11 && diario<=15){
+			pontosDiario=2;
+		}else if(diario>=16 && diario<=20){
+			pontosDiario=1;
+		}else{
+			pontosDiario=0;
+		}
+		
+	return pontosDiario;
+
+}
+
+int rCharts(int real){
+	 
+	 int pontosReal;
+	 
+	 	if(real==1){
+			pontosReal=10;
+		}else if(real==2){
+			pontosReal=7;
+		}else if(real==3){
+			pontosReal=5;
+		}else if(real>=4 && real<=5){
+			pontosReal=3;
+		}else if(real>=6 && real<=10){
+			pontosReal=2;
+		}else if(real>=11 && real<=20){
+			pontosReal=1;
+		}else{
+			pontosReal=0;
+		}
+		
+	return pontosReal;
+
+}
+
+int fator(int dias){
+	int n=1; 
+	int i;
+	for(i=1; i<=dias; i++){
+		n *= i;
+	}
+	return n;
+}
+
+
+int main(){
+	int dMelon, rMelon, dGenie, rGenie, dBugs, rBugs, dVibe, dFlo, dYoutube, dias;
+	scanf("%d%d%d%d%d%d%d%d%d%d", &dMelon, &rMelon, &dGenie, &rGenie, &dBugs, &rBugs, &dVibe, &dFlo, &dYoutube, &dias);
+	
+	int pontosMelon = (6*dCharts(dMelon))+rCharts(rMelon);
+	int pontosGenie = (4*dCharts(dGenie))+rCharts(rGenie);
+	int pontosBugs = (dCharts(dBugs))+rCharts(rBugs);
+	int pontosVibe = 2*dCharts(dVibe);
+	int pontosFlo = 3*dCharts(dFlo);
+	int pontosYoutube = 3*dCharts(dYoutube);
+	int total= pontosMelon+pontosGenie+pontosBugs+pontosVibe+pontosFlo+pontosYoutube;
+	
+	float mediaDiario=(dMelon+dGenie+dBugs+dVibe+dFlo+dYoutube)/6.0;
+	float mediaReal=(rMelon+rGenie+rBugs)/3.0;
+	float mediaT=mediaDiario/mediaReal;
+
+	float pFutura=total-(mediaT * fator(dias));
+	
+	printf("Pontuação Total: %d pontos. \nPrevisão em %d dias é de %.0f pontos.", total, dias, pFutura);
+	return 0;
+}
