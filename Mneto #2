@@ -1,0 +1,55 @@
+#include<stdio.h>
+#include<stdlib.h>
+#include<math.h>
+
+//fatorial de um nº= (n-1)*(n-2)*(n-3)*...*(n-x)
+
+int fatorial(int value){
+	int n=1; 
+	int i;
+	for(i=1; i<=value; i++){
+		n *= i;
+	}
+	return n;
+}
+
+double sequence(int number){
+	double seqResult = (pow((2*number),2))/((fatorial(number)-2)*number);
+	
+	return seqResult;
+}
+
+double perLuck(double number1){
+	double percentage = (number1/4.0)*100.0;
+	
+	return percentage;
+}
+
+int main(){
+	int value1, value2;
+	double start=0.0;
+	scanf("%d%d",&value1,&value2);
+	
+	if (value1>=value2){
+		int value3;
+		
+		for(value3=value2; value3<=value1; value3++){
+			
+			start += sequence(value3);
+			
+		}
+	}else if (value2>=value1){
+		int value3;
+		
+		for(value3=value1; value3<=value2; value3++){
+			
+			start += sequence(value3);
+		}
+	}
+	
+	double eStEcArAlHo = perLuck(start);
+	
+	printf("%.15lf, %.2lf%%",fabs(start),fabs(eStEcArAlHo));
+	
+	return 0; 
+}
