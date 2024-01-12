@@ -1,0 +1,16 @@
+#include <stdio.h>
+
+int main() {
+    int numero;
+    
+    printf("Por favor digite um algarismo: \n\n");
+    
+    // Verifica se a entrada é um número algarismo válido
+    if (scanf("%d", &numero) == 1) {
+        printf("Algarismo das unidades: %d", numero%10);
+    } else {
+        printf("Por favor, digite uma entrada válida");
+    }
+    
+    return 0;
+}
